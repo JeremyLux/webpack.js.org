@@ -63,8 +63,12 @@ __webpack.common.js__
 +   entry: {
 +     app: './src/index.js'
 +   },
++   devServer:{
++    contentBase:'./dist' 
++   }
 +   plugins: [
-+     new CleanWebpackPlugin(['dist']),
+-     new CleanWebpackPlugin(['dist']),
++     new CleanWebpackPlugin(),
 +     new HtmlWebpackPlugin({
 +       title: 'Production'
 +     })
@@ -85,9 +89,9 @@ __webpack.dev.js__
 + module.exports = merge(common, {
 +   mode: 'development',
 +   devtool: 'inline-source-map',
-+   devServer: {
-+     contentBase: './dist'
-+   }
+-   devServer: {
+-     contentBase: './dist'
+-   }
 + });
 ```
 
